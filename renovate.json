@@ -1,0 +1,15 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "regexManagers": [
+        {
+            "description": "Update a single version number using the major version field of a datasource package",
+            "fileMatch": [
+                "(^|/|\\.)Dockerfile$",
+                "(^|/)Dockerfile[^/]*$"
+            ],
+            "matchStrings": [
+                "# renovate-major: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>[^\\s]+?)(?: (lookupName|packageName)=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[a-z-0-9]+?))?(?: extractVersion=(?<extractVersion>.+?))?\\s(?:ENV|ARG) .+?_VERSION=\"?(?<currentValue>.+?)\"?\\s"
+            ]
+        }
+    ]
+}
